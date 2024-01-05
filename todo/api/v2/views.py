@@ -8,15 +8,8 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 
 from .serializers import TaskSerializer
 from todo.models import Task
-# from .permissions import IsOwnerOrReadOnly
-# from .paginations import StandardPagination
 
 class TaskModelViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
-    # filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    # filterset_fields = ['category', 'author', 'status']
-    # search_fields = ['title', 'content']
-    # ordering_fields = ['published_date']
-    # pagination_class = StandardPagination
